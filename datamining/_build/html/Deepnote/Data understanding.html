@@ -1,0 +1,2808 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DATA MINING &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Deepnote/Data understanding';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FDeepnote/Data understanding.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Deepnote/Data understanding.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>DATA MINING</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengumpulkan-data">Mengumpulkan Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menarik-data-dari-mysql">Menarik Data dari MySql</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menarik-data-dari-postgre">Menarik Data dari Postgre</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memahami-data">Memahami Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-jumlah-data-perkelas">Menentukan Jumlah Data Perkelas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengidentifikasi-missing-values">Mengidentifikasi Missing Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbedaan-jenis-kategori-atau-nilai">Perbedaan Jenis Kategori atau Nilai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-k-nn">Metode K-NN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-k-nearest-neighbor">Algoritma K-Nearest Neighbor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-euclidean-distance">Rumus Euclidean Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-algoritma-knn-manual">Implementasi Algoritma KNN Manual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-knn-library-scikit-learn">Implementasi KNN Library Scikit Learn</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-lof-local-outlier-factor">Deteksi LOF (Local Outlier Factor)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teori-lof">Teori LOF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-proses-lof-manual-5-data-3-fitur">Contoh Proses LOF Manual (5 Data &amp; 3 Fitur)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-lof-menggunakan-scikit-learn-dari-data-manual">Implementasi LOF Menggunakan Scikit Learn dari Data Manual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-data-real-ke-outlier-data-iris">Identifikasi Data Real ke Outlier (Data Iris)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="data-mining">
+<h1>DATA MINING<a class="headerlink" href="#data-mining" title="Link to this heading">#</a></h1>
+<p>Data mining merupakan proses pengumpulan dan pengolahan data yang bertujuan untuk mengekstrak informasi penting pada data. Proses pengumpulan dan ekstraksi informasi tersebut dapat dilakukan menggunakan software dengan bantuan perhitungan statistika, matematika, ataupun teknologi Artificial Intelligence (AI). Data mining sering disebut juga Knowledge Discovery in Database (KDD). Data mining memiliki tiga tujuan secara umum yaitu sebagai sarana untuk menjelaskan atau explanatory, untuk konfirmasi atau confirmatory, dan untuk eksplorasi atau exploratory. Selain itu juga memiliki beberapa metode seperti Association, Classification, Regression, dan Clustering.</p>
+<p>Pada data mining, terdapat istilah dataset. Dataset merupakan istilah informal yang mengacu pada kumpulan data. Secara umum, dataset berisi lebih dari satu variabel dan menyangkut suatu topik tertentu. Dataset juga dikatakan sebuah kumpulan data yang berasal dari informasi-informasi pada masa lalu dan siap untuk dikelola menjadi sebuah informasi baru. Pada pembahasan kali ini, Dataset yang digunakan adalah dataset bunga Iris yang diperoleh dari Kaggle. Dalam proyek ini akan mengeksplorasi dan mengklasifikasikan spesies bunga Iris berdasarkan panjang sepal, lebar sepal, panjang kelopak, dan lebar kelopak.</p>
+<img src="CRISP-DM.jpg" width="75%" align="center" /><p>CRISP-DM
+Cross-Industry Standard Process for Data Mining (CRISP-DM) adalah model proses yang menggambarkan siklus hidup ilmu data. Singkatnya, ini mengarahkan untuk melalui seluruh fase mulai dari perencanaan, pengorganisasian, dan implementasi proyek data mining. Model proses untuk data mining ini memberikan gambaran umum siklus hidup proyek data mining. Ini berisi fase proyek, tugas masing-masing dan hubungan antara aktifitas aktifitas yang dilakukan setiap tahapan seperti gambar disamping.</p>
+<p>Berikut ini akan membahas mengenai step-by-step dalam Proses data mining adalah sebagai berikut.</p>
+<hr><section id="mengumpulkan-data">
+<h2>Mengumpulkan Data<a class="headerlink" href="#mengumpulkan-data" title="Link to this heading">#</a></h2>
+<p>Pada pekerjaan ini, kita akan melakukan analisis klasifikasi bunga. Oleh karena itu, tugas pertama adalah mengumpulkan data iris flower.
+Sedangkan, data berada di <a class="reference external" href="http://aiven.io">aiven.io</a>. Maka dari itu, diperlukan adanya penarikan data tersebut.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_1</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM `irismysql`.`irisfull` LIMIT 150&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_69180BE6_4514_45E9_A13B_52B1406EF574&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_1</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM `irismysql`.`irisfull` LIMIT 150&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_69180BE6_4514_45E9_A13B_52B1406EF574&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_1</span>
+
+<span class="ne">NameError</span>: name &#39;_deepnote_execute_sql&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Study Case #1 - 29 Februari 2024</p></li>
+</ul>
+<p>Membuat tabel pada cloud &amp; postgreSql dengan isian, di antaranya:
+id, sepal.length, sepal.width, class (cloud)
+id, petal.length, petal.width, class (postgreSql)</p>
+<p>Penyelesaian:</p>
+<section id="menarik-data-dari-mysql">
+<h3>Menarik Data dari MySql<a class="headerlink" href="#menarik-data-dari-mysql" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM `irismysql`.`iriscloud` LIMIT 100&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_69180BE6_4514_45E9_A13B_52B1406EF574&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sepal.length</th>
+      <th>sepal.width</th>
+      <th>variety</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>96</td>
+      <td>5.7</td>
+      <td>3.0</td>
+      <td>Versicolor</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>97</td>
+      <td>5.7</td>
+      <td>2.9</td>
+      <td>Versicolor</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>98</td>
+      <td>6.2</td>
+      <td>2.9</td>
+      <td>Versicolor</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>99</td>
+      <td>5.1</td>
+      <td>2.5</td>
+      <td>Versicolor</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>100</td>
+      <td>5.7</td>
+      <td>2.8</td>
+      <td>Versicolor</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>Dapat diperhatikan tabel di atas, bahwa yang muncul pada tabel hanya sebatas id, sepal.length, sepal.width, dan variety (class).</p>
+<p>id -&gt; untuk penomoran data (identitas tiap barisnya)
+sepal.length -&gt; untuk pengukuran panjang sepal bunga iris
+sepal.width -&gt; untuk pengukuran lebar sepal bunga iris
+variety -&gt; untuk pengelompokkan jenis bunga iris (setosa/versicolor/virginica)</p>
+</section>
+<section id="menarik-data-dari-postgre">
+<h3>Menarik Data dari Postgre<a class="headerlink" href="#menarik-data-dari-postgre" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_3</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM irispostgre&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_ED09B93E_4FB0_4700_A502_93A277042FCF&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>petal.length</th>
+      <th>petal.width</th>
+      <th>variety</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>146</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>147</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>148</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>149</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>150</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>Virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>Selanjutnya, pada data yang berbeda (PostgreSql) terdapat juga data bunga iris dengan isian, di antaranya: id, petal.length, petal.width, dan variety (class).</p>
+<p>id -&gt; untuk penomoran data (identitas tiap barisnya)
+petal.length -&gt; untuk pengukuran panjang petal bunga iris
+petal.width -&gt; untuk pengukuran lebar petal bunga iris
+variety -&gt; untuk pengelompokkan jenis bunga iris (setosa/versicolor/virginica)</p>
+<img src="iris_flower.webp" width="" align="" /><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                                                                                            *keterangan foto bunga iris
+</pre></div>
+</div>
+<hr></section>
+</section>
+<section id="memahami-data">
+<h2>Memahami Data<a class="headerlink" href="#memahami-data" title="Link to this heading">#</a></h2>
+<p>Pada pekerjaan ini, kita akan mendeskripsikan data iris. Urutan dari hal ini, di antaranya:</p>
+<ol class="arabic simple">
+<li><p>Menentukan jumlah data perkelas (data klasifikasi / ada labelnya)
+-&gt; Jumlah class Setosa sebanyak ….</p></li>
+<li><p>Identifikasi missing values
+-&gt; Menentukan jumlah baris pada kolom-kolom yang kosong</p></li>
+<li><p>Mendeskripsikan tipe-tipe data setiap kolom/fitur/variabel
+-&gt; fitur sepal length: tipe numerik (hasil pengukuran dari sepal length bunga iris)
+-&gt; fitur sepal width: tipe numerik (hasil pengukuran dari sepal width bunga iris)</p></li>
+</ol>
+<section id="menentukan-jumlah-data-perkelas">
+<h3>Menentukan Jumlah Data Perkelas<a class="headerlink" href="#menentukan-jumlah-data-perkelas" title="Link to this heading">#</a></h3>
+<p>Pada setiap kolom pada data iris, terdapat 150 jumlah data. Sedangkan, untuk class nya sendiri, terdapat 3 jenis iris (Setosa, Versicolor, Virginica)</p>
+</section>
+<section id="mengidentifikasi-missing-values">
+<h3>Mengidentifikasi Missing Values<a class="headerlink" href="#mengidentifikasi-missing-values" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_4</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM `irismysql`.`irisfull` WHERE `sepal.length` IS NULL&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_69180BE6_4514_45E9_A13B_52B1406EF574&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sepal.length</th>
+      <th>sepal.width</th>
+      <th>petal.length</th>
+      <th>petal.width</th>
+      <th>variety</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>terdapat ada 5 baris yang hilang pada kolom ‘sepal.length’ pada class (variety) ‘Setosa’ di antara kolom-kolom lainnya pada data iris</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_5</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM `irismysql`.`irisfull` WHERE `sepal.length` IS NOT NULL AND `variety` = </span><span class="se">\&#39;</span><span class="s1">Setosa</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_69180BE6_4514_45E9_A13B_52B1406EF574&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sepal.length</th>
+      <th>sepal.width</th>
+      <th>petal.length</th>
+      <th>petal.width</th>
+      <th>variety</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>1.7</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>4.6</td>
+      <td>3.4</td>
+      <td>1.4</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>4.4</td>
+      <td>2.9</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>5.0</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>5.4</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>4.3</td>
+      <td>3.0</td>
+      <td>1.1</td>
+      <td>0.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>1.2</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>5.7</td>
+      <td>4.4</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>1.3</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>5.7</td>
+      <td>3.8</td>
+      <td>1.7</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>5.0</td>
+      <td>3.8</td>
+      <td>1.5</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>5.4</td>
+      <td>3.4</td>
+      <td>1.7</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>4.6</td>
+      <td>3.6</td>
+      <td>1.0</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>5.1</td>
+      <td>3.3</td>
+      <td>1.7</td>
+      <td>0.5</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>1.9</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>1.6</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>5.2</td>
+      <td>3.5</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>29</td>
+      <td>5.2</td>
+      <td>3.4</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>30</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>4.8</td>
+      <td>3.1</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>32</td>
+      <td>5.4</td>
+      <td>3.4</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>33</td>
+      <td>5.2</td>
+      <td>4.1</td>
+      <td>1.5</td>
+      <td>0.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>34</td>
+      <td>5.5</td>
+      <td>4.2</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>35</td>
+      <td>4.9</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>36</td>
+      <td>5.0</td>
+      <td>3.2</td>
+      <td>1.2</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>37</td>
+      <td>5.5</td>
+      <td>3.5</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>38</td>
+      <td>4.9</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>39</td>
+      <td>4.4</td>
+      <td>3.0</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>40</td>
+      <td>5.1</td>
+      <td>3.4</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>41</td>
+      <td>5.0</td>
+      <td>3.5</td>
+      <td>1.3</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>42</td>
+      <td>4.5</td>
+      <td>2.3</td>
+      <td>1.3</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>43</td>
+      <td>4.4</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>44</td>
+      <td>5.0</td>
+      <td>3.5</td>
+      <td>1.6</td>
+      <td>0.6</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>45</td>
+      <td>5.1</td>
+      <td>3.8</td>
+      <td>1.9</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>46</td>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>47</td>
+      <td>5.1</td>
+      <td>3.8</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>48</td>
+      <td>4.6</td>
+      <td>3.2</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>49</td>
+      <td>5.3</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>50</td>
+      <td>5.0</td>
+      <td>3.3</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>-&gt; Mengisi dengan mencari rata-rata dengan memerhatikan classnya (jika class pada data NULL itu berbeda).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">average</span> <span class="o">=</span> <span class="n">df_5</span><span class="p">[</span><span class="s1">&#39;sepal.length&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">average</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.994
+</pre></div>
+</div>
+</div>
+</div>
+<p>-&gt; Mendapatkan hasil bahwa, rata-rata nilai dari kolom ‘sepal.length’ yang tidak kosong (IS NOT NULL) pada class ‘Setosa’ adalah 4.99.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_6</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;UPDATE `irismysql`.`irisfull` SET `sepal.length` = </span><span class="se">\&#39;</span><span class="s1">4.99</span><span class="se">\&#39;</span><span class="s1"> WHERE `variety` = </span><span class="se">\&#39;</span><span class="s1">Setosa</span><span class="se">\&#39;</span><span class="s1"> AND `sepal.length` IS NULL&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_69180BE6_4514_45E9_A13B_52B1406EF574&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>-&gt; Melakukan update data secara Query dengan memasukkan nilai rata-rata yang telah dicari pada kolom ‘sepal.length’ IS NULL / Kosong</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_7</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM `irismysql`.`irisfull` WHERE `sepal.length` IS NOT NULL AND `variety` = </span><span class="se">\&#39;</span><span class="s1">Setosa</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_69180BE6_4514_45E9_A13B_52B1406EF574&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sepal.length</th>
+      <th>sepal.width</th>
+      <th>petal.length</th>
+      <th>petal.width</th>
+      <th>variety</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>1.7</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>4.6</td>
+      <td>3.4</td>
+      <td>1.4</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>4.4</td>
+      <td>2.9</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>5.0</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>5.4</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>4.3</td>
+      <td>3.0</td>
+      <td>1.1</td>
+      <td>0.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>1.2</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>5.7</td>
+      <td>4.4</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>1.3</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>5.7</td>
+      <td>3.8</td>
+      <td>1.7</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>5.0</td>
+      <td>3.8</td>
+      <td>1.5</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>5.4</td>
+      <td>3.4</td>
+      <td>1.7</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>4.6</td>
+      <td>3.6</td>
+      <td>1.0</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>5.1</td>
+      <td>3.3</td>
+      <td>1.7</td>
+      <td>0.5</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>1.9</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>1.6</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>5.2</td>
+      <td>3.5</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>29</td>
+      <td>5.2</td>
+      <td>3.4</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>30</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>4.8</td>
+      <td>3.1</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>32</td>
+      <td>5.4</td>
+      <td>3.4</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>33</td>
+      <td>5.2</td>
+      <td>4.1</td>
+      <td>1.5</td>
+      <td>0.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>34</td>
+      <td>5.5</td>
+      <td>4.2</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>35</td>
+      <td>4.9</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>36</td>
+      <td>5.0</td>
+      <td>3.2</td>
+      <td>1.2</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>37</td>
+      <td>5.5</td>
+      <td>3.5</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>38</td>
+      <td>4.9</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>39</td>
+      <td>4.4</td>
+      <td>3.0</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>40</td>
+      <td>5.1</td>
+      <td>3.4</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>41</td>
+      <td>5.0</td>
+      <td>3.5</td>
+      <td>1.3</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>42</td>
+      <td>4.5</td>
+      <td>2.3</td>
+      <td>1.3</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>43</td>
+      <td>4.4</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>44</td>
+      <td>5.0</td>
+      <td>3.5</td>
+      <td>1.6</td>
+      <td>0.6</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>45</td>
+      <td>5.1</td>
+      <td>3.8</td>
+      <td>1.9</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>46</td>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>47</td>
+      <td>5.1</td>
+      <td>3.8</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>48</td>
+      <td>4.6</td>
+      <td>3.2</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>49</td>
+      <td>5.3</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>50</td>
+      <td>5.0</td>
+      <td>3.3</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>-&gt; Setelah di UPDATE, akan menghasilkan data yang NULL tadi dengan nilai 4.99 (Bernilai 5 jika dibulatkan)</p>
+<p>Catatan: Jika suatu data tidak ada class (Label), maka jika mencari rata-rata data yang ada Missing Values, tinggal rata-rata keseluruhan data yang tidak kosong tanpa memikirkan setiap classnya. Dikarenakan data tidak mempunyai class / Label.</p>
+</section>
+<section id="perbedaan-jenis-kategori-atau-nilai">
+<h3>Perbedaan Jenis Kategori atau Nilai<a class="headerlink" href="#perbedaan-jenis-kategori-atau-nilai" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Jika mencari data yang MISSING VALUES dengan datanya kategori -&gt; mencari dengan banyaknya data yang sering muncul (MODUS)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Sedangkan, mencari data MISSING VALUES dengandatanya bernilai -&gt; mencari dengan cara meghitung rata-rata nya</p></li>
+</ul>
+</section>
+<section id="metode-k-nn">
+<h3>Metode K-NN<a class="headerlink" href="#metode-k-nn" title="Link to this heading">#</a></h3>
+<p>K-Nearest Neighbors (K-NN) adalah salah satu metode dalam supervised learning pada Machine Learning yang dapat digunakan untuk klasifikasi dan regresi. K-NN bekerja dengan mencari jarak antara titik baru dan semua titik dalam dataset pelatihan. Jarak-jarak tersebut diurutkan dan K titik dalam dataset pelatihan terdekat terpilih sebagai tetangga terdekat.</p>
+<p>Untuk masalah klasifikasi, label kelas dari titik baru adalah label yang paling sering dari K tetangga terdekat. Sedangkan untuk masalah regresi, label atau output adalah rata-rata atau median dari K tetangga terdekat.</p>
+<p>Nilai K dalam K-NN adalah hiperparameter yang harus dipilih oleh pengguna. Nilai K yang berbeda-beda dapat menghasilkan model yang berbeda-beda dan memiliki performa yang berbeda-beda pada dataset yang sama.</p>
+<ul class="simple">
+<li><p>Study Case #2 - 07 Maret 2024</p></li>
+</ul>
+<p>Menjelaskan algoritma KNN beserta contoh cara menghitung manual (Excel Version)
+Implementasikan pada missing values data anda (Missing values = 5)
+menggunakan library scikit learn -&gt; sklearn.impute.KNNImputer</p>
+<p>Penyelesaian:</p>
+</section>
+<section id="algoritma-k-nearest-neighbor">
+<h3>Algoritma K-Nearest Neighbor<a class="headerlink" href="#algoritma-k-nearest-neighbor" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Menentukan nilai K (tetangga terdekat itu siapa -&gt; jika awal = 2, maka akhiran nanti juga = 2)</p></li>
+<li><p>Menghitung jarak antara data uji dengan data latih</p></li>
+<li><p>Mengurutkan jarak dari yang terkecil hingga terbesar</p></li>
+<li><p>Mengambil data sebanyak K terdekat</p></li>
+<li><p>Memilih kelas mayor (menghitung rata-rata -&gt; karena datanya numerik)</p></li>
+</ol>
+<p>Untuk mencari dekat atau jauhnya jarak antar titik pada class K biasanya dihitung menggunakan jarak Euclidean. Jarak Euclidean adalah formula untuk mencari jarak antara 2 titik dalam ruang dua dimensi. Berikut rumus untuk menghitung jarak Euclidean:</p>
+</section>
+<section id="rumus-euclidean-distance">
+<h3>Rumus Euclidean Distance<a class="headerlink" href="#rumus-euclidean-distance" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[ d(x,y) = \sqrt{\sum_{i=1}^n (x_i - y_i)^2} \]</div>
+</section>
+<section id="implementasi-algoritma-knn-manual">
+<h3>Implementasi Algoritma KNN Manual<a class="headerlink" href="#implementasi-algoritma-knn-manual" title="Link to this heading">#</a></h3>
+<img src="KNN Manual/data mentah.jpg" width="75%" align="center" /><img src="KNN Manual/data mentah (2).jpg" width="75%" align="left" /><p>Dapat diketahui bahwa terdapat 5 kolom yang missing values yakni pada kolom ‘sepal.length’ di id 5, 10, 15, 20, dan 25. Untuk memudahkan proses penghitungan, 5 kolom tersebut diletakkan pada baris paling bawah (sebelumnya berurutan).</p>
+<img src="KNN Manual/Jarak Euclidean.jpg" width="75%" align="" /><img src="KNN Manual/Jarak Euclidean (2).jpg" width="75%" align="left" /><p>Selanjutnya, dihitung jarak Euclidean nya dengan rumus yang tertera di atas (acuan pengurangan ke kolom kosong/NULL, yaitu id 5, 10, 15, 20, 25). Setelah dihitung tersebut, dilanjutkan menghitung rata-rata dari tiap hasil jarak Euclidean pada masing-masing kolom (sepal.width, petal.length, petal.width). Lalu, diberikan label / penanda dengan kolom ‘Urutan’ untuk mempermudah step selanjutnya.</p>
+<img src="KNN Manual/Hasil Sorting.png" width="50%" align="" /><img src="KNN Manual/Hasil Sorting (2).png" width="50%" align="left" /><p>Kemudian, dilakukan Sorting atau diurutkan dari nilai terkecil hingga terbesar dengan penanda yang telah ditulis step sebelumnya. Dapat dilihat gambar diatas, dimulai nilai terkecil 0.457478 hingga terbesar yaitu 1.296331.</p>
+<img src="KNN Manual/Ambil K Terdekat.png" width="75%" align="" /><img src="KNN Manual/Ambil K Terdekat (2).png" width="100%" align="left" /><p>Setelah itu, mengambil data sebanyak K terdekat. Dapat diketahui, K yang ditentukan pada awal yaitu 5. Oleh karena itu, pada step ini juga mengambil data sebanyak 5. Dengan kata lain, awal dan akhiran harus sama untuk menentukan banyaknya K. Dapat dilihat pada gambar diatas, data yang telah diurutkan sekaligus diambil 5 data terdekat, di antaranya id 4, 38, 28, 30, dan 36.</p>
+<img src="KNN Manual/Hasil Akhir KNN Manual.png" width="actual" align="left" /><div class="math notranslate nohighlight">
+\[
+\overline{S} = \frac{\sum_{i=4}^{8} S_i}{5}
+\]</div>
+<p>Pada akhirnya, tinggal menghitung rata-rata dari kelima data yang terdekat itu. Rata-rata yang digunakan adalah kolom ‘sepal.length’. Dapat dilihat rumus dan gambar diatas, penjumlahan dari kolom ‘sepal.length’ di id 4, 38, 28, 30, 36 dibagi dengan 5 dengan menghasilkan nilai akhirnya adalah 4.88.</p>
+<p>Dengan demikian, cara menghitung K-Nearest Neighbor secara manual telah dilakukan. Diharapkan dengan menggunakan cara manual ini, dapat memahami lebih dalam mengenai K-Nearest Neighbor itu. Dimana, hal ini merupakan pondasi untuk melakukan penghitungan K-Nearest Neighbor secara otomatisasi / coding menggunakan library scikit learn -&gt; sklearn.impute.KNNImputer.</p>
+</section>
+<section id="implementasi-knn-library-scikit-learn">
+<h3>Implementasi KNN Library Scikit Learn<a class="headerlink" href="#implementasi-knn-library-scikit-learn" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_8</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM irisfull&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_ED09B93E_4FB0_4700_A502_93A277042FCF&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_8</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sepal.length</th>
+      <th>sepal.width</th>
+      <th>petal.length</th>
+      <th>petal.width</th>
+      <th>variety</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>1.7</td>
+      <td>0.4</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>147</td>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>148</td>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>149</td>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>150</td>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5</td>
+      <td>NaN</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>Dalam case ini, terdapat 5 kolom yang missing values, tepatnya pada kolom ‘sepal.length’ lebih tepatnya di id 5, 10, 15, 20, dan 25 (selengkapnya cek data di atas), sama halnya pada Implementasi Algoritma KNN Manual. Akan tetapi, yang membedakan pada kali ini, database yang digunakan adalah PostgreSql. Dimana sebelumnya sudah menggunakan data dari database MySql.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_8</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id              0
+sepal.length    5
+sepal.width     0
+petal.length    0
+petal.width     0
+variety         0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dapat diketahui, pada data di atas terdapat data yang missing values (IS NULL) di kolom ‘sepal.length’ sebanyak 5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_8</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_8</span><span class="p">[</span><span class="s2">&quot;sepal.length&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sepal.length</th>
+      <th>sepal.width</th>
+      <th>petal.length</th>
+      <th>petal.width</th>
+      <th>variety</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>97</th>
+      <td>10</td>
+      <td>NaN</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.1</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>15</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>1.2</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>20</td>
+      <td>NaN</td>
+      <td>3.8</td>
+      <td>1.5</td>
+      <td>0.3</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>25</td>
+      <td>NaN</td>
+      <td>3.4</td>
+      <td>1.9</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5</td>
+      <td>NaN</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Selanjutnya, mengecek dari kelima data tersebut, terdapat uraian berupa data di atas dengan id 5, 10, 15, 20, dan 25 pada kolom ‘sepal.length’. Dapat dilihat data di atas, kelima data itu yang mewakili bahwa data tersebut kosong adalah ‘nan’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">KNNImputer</span>
+
+<span class="nb">dict</span> <span class="o">=</span> <span class="n">df_8</span>  <span class="c1"># Asumsi df_8 data yang digunakan</span>
+
+<span class="n">Before_imputation</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Sebelum melakukan imputasi</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Before_imputation</span><span class="p">)</span>
+
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">KNNImputer</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">After_imputation</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Before_imputation</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;variety&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Konversi Output ke DataFrame dengan 2 angka dibelakang koma </span>
+<span class="n">After_imputation_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">After_imputation</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">Before_imputation</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;variety&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">After_imputation_df</span> <span class="o">=</span> <span class="n">After_imputation_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># menggunakan fungsi round()</span>
+
+<span class="c1"># Konversi kolom &#39;id&#39; ke integer</span>
+<span class="n">After_imputation_df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">After_imputation_df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># Mencari indeks ke-berapa saja yang kosong pada kolom &#39;sepal.length&#39;</span>
+<span class="n">imputed_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">Before_imputation</span><span class="p">[</span><span class="s1">&#39;sepal.length&#39;</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Print Baris sebelum dan sesudah imputasi untuk terutama indeks yang kosong/nan</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Data Sebelum imputasi untuk baris yang kosong:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Before_imputation</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">imputed_indices</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Data Setelah imputasi untuk baris yang kosong:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">After_imputation_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">imputed_indices</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data Sebelum melakukan imputasi
+       id  sepal.length  sepal.width  petal.length  petal.width    variety
+0      1           5.1          3.5           1.4          0.2     Setosa
+1      2           4.9          3.0           1.4          0.2     Setosa
+2      3           4.7          3.2           1.3          0.2     Setosa
+3      4           4.6          3.1           1.5          0.2     Setosa
+4      6           5.4          3.9           1.7          0.4     Setosa
+..   ...           ...          ...           ...          ...        ...
+145  147           6.3          2.5           5.0          1.9  Virginica
+146  148           6.5          3.0           5.2          2.0  Virginica
+147  149           6.2          3.4           5.4          2.3  Virginica
+148  150           5.9          3.0           5.1          1.8  Virginica
+149    5           NaN          3.6           1.4          0.2     Setosa
+
+[150 rows x 6 columns]
+
+
+Data Sebelum imputasi untuk baris yang kosong:
+      id  sepal.length  sepal.width  petal.length  petal.width variety
+97   10           NaN          3.1           1.5          0.1  Setosa
+98   15           NaN          4.0           1.2          0.2  Setosa
+99   20           NaN          3.8           1.5          0.3  Setosa
+100  25           NaN          3.4           1.9          0.2  Setosa
+149   5           NaN          3.6           1.4          0.2  Setosa
+
+
+Data Setelah imputasi untuk baris yang kosong:
+      id  sepal.length  sepal.width  petal.length  petal.width
+97   10          4.90          3.1           1.5          0.1
+98   15          5.00          4.0           1.2          0.2
+99   20          5.55          3.8           1.5          0.3
+100  25          5.05          3.4           1.9          0.2
+149   5          5.00          3.6           1.4          0.2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kemudian, memberikan sedikit tambahan code yang sesuai pada dokumentasi library  scikit-learn KNNImputer. Mulai dari inisialisasi library, data yang digunakan (df_8) sampai menghasilkan keluaran / output Data sebelum imputasi serta Data sebelum dan sesudah imputasi untuk baris yang kosong / nan. Selengkapnya dapat melihat hasil pada code di atas.</p>
+<p>Demikian untuk Implementasi dalam Algoritma KNN baik itu secara manual bahkan menggunakan Library Scikit Learn. Hasil akhir dari keduanya hampir mirip atau tidak berbeda jauh. Dengan kata lain, sudah melakukan proses dari awal sampai akhir sudah baik walaupun tidak menutup kemungkinan masih ada beberapa kekeliruan yang disengaja ataupun tidak. Semoga dapat memberikan gambaran bahwa adanya algoritma KNN ini digunakan.</p>
+<hr></section>
+</section>
+<section id="deteksi-lof-local-outlier-factor">
+<h2>Deteksi LOF (Local Outlier Factor)<a class="headerlink" href="#deteksi-lof-local-outlier-factor" title="Link to this heading">#</a></h2>
+<section id="teori-lof">
+<h3>Teori LOF<a class="headerlink" href="#teori-lof" title="Link to this heading">#</a></h3>
+<p>Algoritma Local Outlier Factor (LOF) adalah metode pendeteksian anomali tanpa pengawasan yang menghitung variasi kepadatan lokal dari suatu titik data sehubungan dengan tetangganya. Algoritma ini menganggap sampel yang memiliki bobot yang jauh lebih rendah daripada tetangganya sebagai outlier. Outlier dalam ilmu statistik adalah titik data yang nilainya jatuh jauh dari titik data lainnya. Outlier bisa muncul sebagai pengecualian dalam pola data yang ada. Nilainya bisa jauh lebih tinggi atau jauh lebih rendah dibanding nilai-nilai lain dalam kumpulan data (dataset).</p>
+<p>LOF adalah teknik berbasis densitas yang menggunakan pencarian tetangga terdekat untuk mengidentifikasi titik-titik anomali. Pada dasarnya LOF, suatu titik didasarkan pada rasio kepadatan lokal area di sekitar titik tersebut dan kepadatan lokal tetangganya. LOF mempertimbangkan kepadatan relatif dari titik-titik data. Dengan kata sederhana, LOF membandingkan kepadatan lokal suatu titik dengan kepadatan lokal dari k tetangga terdekatnya dan memberikan hasil akhir berupa peringkat.</p>
+<p>Keuntungan menggunakan LOF adalah membantu mengidentifikasi titik-titik yang merupakan pencilan relatif terhadap sekelompok titik lokal. Sebagai contoh, ketika menggunakan teknik local outlier factor, tetangga dari titik-titik tertentu diidentifikasi dan dibandingkan dengan densitas dari titik-titik tetangga.</p>
+<p>Langkah-langkah berikut ini dapat diterapkan ketika menggunakan model LOF:</p>
+<ol class="arabic simple">
+<li><p>Hitung jarak antara P dan semua titik yang diberikan dengan menggunakan fungsi jarak seperti euclidean atau Manhattan.</p></li>
+<li><p>Temukan titik terdekat ke-k (k-tetangga terdekat). Sebagai contoh, jika K = 3, cari jarak tetangga terdekat ketiga.</p></li>
+<li><p>Temukan k titik terdekat.</p></li>
+<li><p>Temukan kepadatan jangkauan lokal menggunakan persamaan berikut:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\text{lrd}{_k}(o) = \frac{||N_k(o)||}{\sum_{o' \in N_k(o)} \text{reachdist}{_k}(o' \leftarrow o)}
+\]</div>
+<p>di mana jarak yang dapat dijangkau dapat dihitung sebagai berikut:</p>
+<div class="math notranslate nohighlight">
+\[ \text{reachdist}{_k}(o' \leftarrow o) = \max\left\{ \text{dist}{_k}(o), \text{dist}(o, o') \right\} \]</div>
+<p>Harap diperhatikan bahwa Nk(O) mengacu pada jumlah tetangga.
+5) Langkah terakhir adalah menghitung faktor pencilan lokal sebagai berikut:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{LOF}_k(o) = \frac{\sum_{o' \in N_k(o)} \frac{lrd_k(o')}{lrd_k(o)}}{||N_k(o)||}
+\]</div>
+</section>
+<section id="contoh-proses-lof-manual-5-data-3-fitur">
+<h3>Contoh Proses LOF Manual (5 Data &amp; 3 Fitur)<a class="headerlink" href="#contoh-proses-lof-manual-5-data-3-fitur" title="Link to this heading">#</a></h3>
+<p>Pada kali ini, akan terdapat contoh sekaligus penjelasan singkat terkait langkah-langkah implementasi algoritma Local Outlier Factor (LOF) secara manual pada Microsoft Excel untuk mendeteksi outlier dalam dataset. Implementasi ini menggunakan rumus dan fungsi Excel untuk menghitung LOF dan mengidentifikasi data yang nilainya jauh dari tetangganya (outlier).</p>
+<ul class="simple">
+<li><p>Menentukan Dataset (Data Awal) yang Digunakan</p></li>
+</ul>
+<img src="LOF Manual/Dataset.png" width="50%" align="left" /><p>Pada tahap awal, diketahui ada 5 data yang tersedia, yaitu a, b, c, d, e. Sedangkan, adapula fitur yang tertera, yakni x, y, z. Pada masing-masing kolom berisikan data / angka yang berbeda-beda. Nantinya kita akan mencari outlier dari data yang tersedia di atas.</p>
+<ul class="simple">
+<li><p>Menghitung semua jarak antara setiap n titik data</p></li>
+</ul>
+<img src="LOF Manual/Step 1.png" width="50%" align="left" /><p>Pada langkah pertama, menghitung seluruh jarak antara tiap-tiap titik data. Pada contoh di atas, menggunakan tiap 3 titik data. Pada kolom proses dilakukan pengurangan antar titik yang dicari. Pastikan menggunakan rumus ABS() atau Absolute agar menghindari hasil yang negatif. Hal ini dikarenakan mencari hasil yang keseluruhan positif agar mempermudahkan proses LOF selanjutnya. Setelah itu, akan menghasilkan kolom ‘Hasil’ yang menampung dari penjumlahan tiap-tiap proses penghitungan jarak sebelumnya.</p>
+<ul class="simple">
+<li><p>Menghitung semua dist₃(o)</p></li>
+</ul>
+<img src="LOF Manual/Step 2.png" width="50%" align="left" /><p>Selanjutnya, menghitung seluruh dist₃(o). distₖ(o) merupakan jarak antara o (object) dan NN ke-k (tetangga terdekat ke-k). Diketahui pada gambar di atas, bahwa dipisahkan tiap-tiap jarak (distance) mulai dari a, b, sampai e. Lalu, diurut masing-masing jarak tersebut mulai dari yang terkecil hingga terbesar. Kemudian, ditarik hasil dalam dist₃(o) -&gt; o = a, b, c, d, e dari k = 3, di antaranya 9, 9, 14, 16, dan 8. Angka-angka itu didapatkan dari urutan ketiga angka setelah diurutkan (kolom Setelah Diurutkan).</p>
+<ul class="simple">
+<li><p>Menghitung semua Nₖ(o)</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                                    lingkungan jarak-k dari o               -&gt;
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[ \text{N}{_k}(o) = \left\{ \text{o' | o' in D}, \text{dist}(o, o') \leq \text{dist}{_k} (o) \right\} \]</div>
+<img src="LOF Manual/Step 3.png" width="" align="left" /><p>Setelah itu, menghitung seluruh lingkungan jarak-k dari o / object. Dapat dilihat pada gambar di atas, misalnya hasil dari N₃(a) diperoleh b, c, d, dan e. Hal ini dapat terjadi karena keempat titik tersebut hasil manhattan (Step 1) itu termasuk kurang dari sama dengan (≤) dari object a. Berlaku juga untuk N₃(b) - N₃(e) karena rumusnya sama (rumus Latex di atas).</p>
+<ul class="simple">
+<li><p>Menghitung semua lrdₖ(o)</p></li>
+</ul>
+<p>lrdₖ(o) -&gt; Local Reachability Density of o (Kepadatan Keterjangkauan Lokal dari o / object)</p>
+<div class="math notranslate nohighlight">
+\[
+\text{lrd}{_k}(o) = \frac{||N_k(o)||}{\sum_{o' \in N_k(o)} \text{reachdist}{_k}(o' \leftarrow o)}
+\]</div>
+<p>|| Nₖ(o) || berarti jumlah objek dalam Nₖ(o)</p>
+<div class="math notranslate nohighlight">
+\[ \text{reachdist}{_k}(o' \leftarrow o) = \max\left\{ \text{dist}{_k}(o), \text{dist}(o, o') \right\} \]</div>
+<img src="LOF Manual/Step 4.png" width="" align="left" /><p>Selanjutnya, menghitung semua kepadatan keterjangkauan lokal lrdₖ(o). Dilihat gambar serta rumus di atas, misalnya pada lrd₃(a) menghasilkan nilai sebesar 0.266667. Hal ini terjadi karena rumus lrdₖ(o) di atas, bahwa 4 (jumlah kepadatan keterjangkauan lokal) dibagi dengan penjumlahan 1, 5, 9 (Step 2 -&gt; kolom Setelah Diurutkan). Dimana 1, 5, 9 diperoleh dari reachdist (jangkauan jarak) k = 3 dari selain object a (b, c, d, e). Demikian pula, untuk cara mencari lrd₃(b) - lrd₃(e) yang mana akan menghasilkan nilai akhir sesuai tabel di atas.</p>
+<ul class="simple">
+<li><p>Menghitung semua LOFₖ(o)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\text{LOF}_k(o) = \frac{\sum_{o' \in N_k(o)} \frac{lrd_k(o')}{lrd_k(o)}}{||N_k(o)||} = {\sum_{o' \in N_k(o)}}{lrd_k(o')} . {\sum_{o' \in N_k(o)}} \text{reachdist}{_k}(o' \leftarrow o)
+\]</div>
+<img src="LOF Manual/Step 5.png" width="" align="left" /><p>Kemudian, pada tahap selanjutnya menghitung semua  Local Outlier Factor-k (LOFₖ) pada tiap object. Pada gambar di atas, misalnya diketahui LOF₃(a) -&gt; sesuai rumus di atas. Hal itu akan menghasilkan nilai sebesar 10.57703. Dimana asalnya dari penjumlahan seluruh hasil kecuali lrd₃(a), yaitu lrd₃(b) - lrd₃(e) dikalikan dengan penjumlahan reachdist (jangkauan jarak) k = 3 dari selain object a (b, c, d, e). Demikian pula untuk mencari hasil LOF₃(b) - LOF₃(e) dengan acuan rumus di atas. Akhirnya, akan menghasilkan nilai-nilai yang tertera pada kolom ‘Hasil’.</p>
+<ul class="simple">
+<li><p>Mengurutkan semua LOFₖ(o)</p></li>
+</ul>
+<img src="LOF Manual/Step 6.png" width="" align="left" /><p>Terakhir, mengurutkan hasil dari proses LOFₖ(o) sebelumnya (Step 5). Urutannya dimulai dari yang terbesar ke terkecil dan akan menghasilkan sesuai gambar di atas. Dapat disimpulkan, bahwa LOF₃(d) mendapatkan nilai yang tertinggi sebesar 39.73109 serta dapat dipastikan untuk LOF₃(d) merupakan outliner dari dataset yang diketahui di awal.</p>
+</section>
+<section id="implementasi-lof-menggunakan-scikit-learn-dari-data-manual">
+<h3>Implementasi LOF Menggunakan Scikit Learn dari Data Manual<a class="headerlink" href="#implementasi-lof-menggunakan-scikit-learn-dari-data-manual" title="Link to this heading">#</a></h3>
+<p>Selanjutnya, akan diberikan contoh untuk menunjukkan implementasi menggunakan library Scikit-Learn untuk mendeteksi outlier dalam dataset dengan algoritma Local Outlier Factor (LOF). LOF adalah metode yang efektif untuk mendeteksi outlier dalam data multidimensi. Dataset yang digunakan dalam contoh ini adalah dataset buatan yang terdiri dari 5 data point dengan 3 fitur. Berikut ini akan dijelaskan langkah-langkah dalam membangun code untuk mendeteksi outlier dalam dataset dengan algoritma LOF.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+<span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  1,  1, -1,  1])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Langkah-langkah:</p>
+<ol class="arabic simple">
+<li><p>Import library: Import library NumPy dan LocalOutlierFactor dari Scikit-Learn.</p></li>
+<li><p>Membuat dataset: Mengisi dataset dengan NumPy.</p></li>
+<li><p>Mendefinisikan model LOF: Membuat model LOF dengan menentukan nilai k untuk k-nearest neighbors (n_neighbors) =&gt; sebesar 3 dan metode untuk menghitung local density (p) =&gt; sebesar 1 (karena menggunakan Manhattan).</p></li>
+<li><p>Melatih model LOF: Latih model LOF pada dataset.</p></li>
+<li><p>Memprediksi outlier: Gunakan model LOF untuk memprediksi outlier dalam dataset. Angka yang menghasilkan -1 merupakan outlier. Sedangkan, angka 1 adalah data normal.</p></li>
+</ol>
+<p>Output dari model LOF adalah array dengan nilai LOF untuk setiap data point. Data point dengan nilai LOF yang lebih tinggi dibandingkan data point lainnya adalah outlier. Dimana dapat disimpulkan bahwa, Implementasi LOF dengan Scikit-Learn dapat membantu dalam mendeteksi outlier dalam dataset. Implementasi ini mudah dan efisien dibandingkan dengan implementasi manual.</p>
+<p>Visualisasi Data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+
+<span class="c1"># Dataset</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Mendefinisikan model LOF</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Melatih model LOF</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Visualisasi data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">predictions</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fitur 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Fitur 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Visualisasi Outlier dengan LOF&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;LOF Score&#39;</span><span class="p">)</span>  <span class="c1"># Menambahkan label pada colorbar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1adb83b785877376d68b0b35af6364a4e613a397a007619998513bb2f990ab26.png" src="../_images/1adb83b785877376d68b0b35af6364a4e613a397a007619998513bb2f990ab26.png" />
+</div>
+</div>
+</section>
+<section id="identifikasi-data-real-ke-outlier-data-iris">
+<h3>Identifikasi Data Real ke Outlier (Data Iris)<a class="headerlink" href="#identifikasi-data-real-ke-outlier-data-iris" title="Link to this heading">#</a></h3>
+<p>Kemudian, pada kali ini akan ditunjukkan cara mendeteksi outlier pada dataset iris menggunakan algoritma Local Outlier Factor (LOF) dari library Scikit-learn. Dataset yang digunakan adalah dataset iris yang terkenal dalam ilmu data. Dataset ini berisi informasi tentang 150 bunga iris dari tiga spesies: Iris Setosa, Iris Versicolor, dan Iris Virginica. Untuk Dataset sendiri sudah tersimpan pada database PostgreSQL dengan nama tabelnya adalah irisoutlier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_9</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM irisoutlier&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_ED09B93E_4FB0_4700_A502_93A277042FCF&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sepal.length</th>
+      <th>sepal.width</th>
+      <th>petal.length</th>
+      <th>petal.width</th>
+      <th>variety</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>146</td>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>147</td>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>148</td>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>149</td>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>Virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>150</td>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>Virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>Berikut merupakan code beserta penjelasan pada setiap langkah-langkah mendekteksi outlier pada Data Iris (PostgreSQL).</p>
+<p>Code Program:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+
+<span class="c1"># Memuat dataset iris</span>
+<span class="n">iris_df</span> <span class="o">=</span> <span class="n">df_9</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># Dibuat salinan dataset agar data asli tidak termodifikasi</span>
+
+<span class="c1"># Memisahkan fitur (X) dan target (y)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;variety&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Mengasumsikan &#39;variety&#39; adalah kolom target</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris_df</span><span class="p">[</span><span class="s1">&#39;variety&#39;</span><span class="p">]</span>
+
+<span class="c1"># Encode target variable (opsional, untuk penggunaan kedepannya)</span>
+<span class="n">encoder</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">y_encoded</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Encode features jika mengandung string</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">X</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="nb">object</span><span class="p">:</span>
+    <span class="n">X</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+
+<span class="c1"># Mendefinisikan model LOF</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">novelty</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Melatih model LOF</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Prediksi outlier</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Menambahkan kolom baru untuk outlier</span>
+<span class="n">iris_df</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">predictions</span>
+
+<span class="c1"># Mengubah format output</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.float_format&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Menampilkan hasil sebelum dan setelah outlier</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Sebelum Outlier:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Data Setelah Outlier Ditentukan:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris_df</span><span class="p">[</span><span class="n">iris_df</span><span class="p">[</span><span class="s1">&#39;outlier&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Menampilkan kolom mana yang merupakan outlier</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Kolom Outlier:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">iris_df</span><span class="p">[</span><span class="s1">&#39;outlier&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data Sebelum Outlier:
+  id  sepal.length  sepal.width  petal.length  petal.width variety  outlier
+0  1          5.10         3.50          1.40         0.20  Setosa       -1
+1  2          4.90         3.00          1.40         0.20  Setosa        1
+2  3          4.70         3.20          1.30         0.20  Setosa        1
+3  4          4.60         3.10          1.50         0.20  Setosa        1
+4  5          5.00         3.60          1.40         0.20  Setosa        1
+
+Data Setelah Outlier Ditentukan:
+  id  sepal.length  sepal.width  petal.length  petal.width variety  outlier
+1  2          4.90         3.00          1.40         0.20  Setosa        1
+2  3          4.70         3.20          1.30         0.20  Setosa        1
+3  4          4.60         3.10          1.50         0.20  Setosa        1
+4  5          5.00         3.60          1.40         0.20  Setosa        1
+5  6          5.40         3.90          1.70         0.40  Setosa        1
+
+Kolom Outlier:
+      id  sepal.length  sepal.width  petal.length  petal.width    variety  \
+0      1          5.10         3.50          1.40         0.20     Setosa   
+6      7          4.60         3.40          1.40         0.30     Setosa   
+7      8          5.00         3.40          1.50         0.20     Setosa   
+8      9          4.40         2.90          1.40         0.20     Setosa   
+9     10          4.90         3.10          1.50         0.10     Setosa   
+10    11          5.40         3.70          1.50         0.20     Setosa   
+11    12          4.80         3.40          1.60         0.20     Setosa   
+12    13          4.80         3.00          1.40         0.10     Setosa   
+13    14          4.30         3.00          1.10         0.10     Setosa   
+127  128          6.10         7.00          4.90         1.80  Virginica   
+132  133         40.50         2.80         10.50         2.20  Virginica   
+
+     outlier  
+0         -1  
+6         -1  
+7         -1  
+8         -1  
+9         -1  
+10        -1  
+11        -1  
+12        -1  
+13        -1  
+127       -1  
+132       -1  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Langkah-langkah beserta Penjelasan:</p>
+<ol class="arabic simple">
+<li><p>Memuat dataset dan memisahkan fitur (X) dan target (y).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Memuat dataset iris</span>
+<span class="n">iris_df</span> <span class="o">=</span> <span class="n">df_9</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># Buat salinan dataset agar data asli tidak termodifikasi</span>
+
+<span class="c1"># Memisahkan fitur (X) dan target (y)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;variety&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Asumsikan &#39;variety&#39; adalah kolom target</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris_df</span><span class="p">[</span><span class="s1">&#39;variety&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>-) df_9 diubah sesuai dengan nama dataset yang digunakan.
+-) Kolom ‘variety’ diasumsikan sebagai kolom target.
+-) X berisi dataframe dengan semua fitur kecuali kolom target.
+-) y berisi dataframe dengan kolom target.</p>
+<ol class="arabic simple" start="2">
+<li><p>Encode Target Variable (opsional)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Encode target variable (opsional, untuk penggunaan di masa depan)</span>
+<span class="n">encoder</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">y_encoded</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>-) Code ini meng-encode target variable y menggunakan LabelEncoder.
+-) Langkah ini opsional, dan dapat digunakan untuk keperluan kedepannya.</p>
+<ol class="arabic simple" start="3">
+<li><p>Encode Features jika Mengandung String (opsional)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Encode features jika mengandung string</span>
+<span class="c1"># for col in X.columns:</span>
+<span class="c1">#   if X[col].dtype == object:</span>
+<span class="c1">#     X[col] = encoder.fit_transform(X[col])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>-) Code ini meng-encode fitur-fitur dalam X yang bertipe string menggunakan LabelEncoder.
+-) Langkah ini juga opsional, dan hanya diperlukan jika terdapat fitur string dalam dataset.</p>
+<ol class="arabic simple" start="4">
+<li><p>Mendefinisikan model LOF dengan parameter n_neighbors=4 dan p=1</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mendefinisikan model LOF</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">novelty</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>-) Model LOF didefinisikan dengan parameter:
+-&gt; n_neighbors: Jumlah tetangga yang digunakan untuk menghitung LOF.
+-&gt; p: Norma yang digunakan untuk menghitung jarak.
+-&gt; novelty: Menentukan apakah outlier adalah data yang sangat berbeda (True) atau data yang normal (False).</p>
+<ol class="arabic simple" start="5">
+<li><p>Melatih Model LOF dan Memprediksi Outlier</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Melatih model LOF</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Prediksi outlier</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>-) Model LOF dilatih pada data X.
+-) predictions berisi nilai LOF untuk setiap baris data dalam X.</p>
+<ol class="arabic simple" start="6">
+<li><p>Menambahkan Kolom Baru untuk Outlier dan Mengubah Format Output</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menambahkan kolom baru untuk outlier</span>
+<span class="n">iris_df</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">predictions</span>
+
+<span class="c1"># Mengubah format output</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.float_format&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>-) Kolom baru ‘outlier’ ditambahkan ke dataframe iris_df.
+-) Nilai pada kolom ‘outlier’ adalah -1 untuk outlier dan 1 untuk non-outlier.
+-) Format output diubah untuk menampilkan dua digit desimal.</p>
+<ol class="arabic simple" start="7">
+<li><p>Menampilkan Hasil (Output)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menampilkan hasil sebelum dan setelah outlier</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Sebelum Outlier:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Data Setelah Outlier Ditentukan:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris_df</span><span class="p">[</span><span class="n">iris_df</span><span class="p">[</span><span class="s1">&#39;outlier&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Menampilkan kolom mana yang merupakan outlier</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Kolom Outlier:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">iris_df</span><span class="p">[</span><span class="s1">&#39;outlier&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data Sebelum Outlier:
+  id  sepal.length  sepal.width  petal.length  petal.width variety  outlier
+0  1          5.10         3.50          1.40         0.20  Setosa        1
+1  2          4.90         3.00          1.40         0.20  Setosa        1
+2  3          4.70         3.20          1.30         0.20  Setosa        1
+3  4          4.60         3.10          1.50         0.20  Setosa        1
+4  5          5.00         3.60          1.40         0.20  Setosa        1
+
+Data Setelah Outlier Ditentukan:
+  id  sepal.length  sepal.width  petal.length  petal.width variety  outlier
+0  1          5.10         3.50          1.40         0.20  Setosa        1
+1  2          4.90         3.00          1.40         0.20  Setosa        1
+2  3          4.70         3.20          1.30         0.20  Setosa        1
+3  4          4.60         3.10          1.50         0.20  Setosa        1
+4  5          5.00         3.60          1.40         0.20  Setosa        1
+
+Kolom Outlier:
+      id  sepal.length  sepal.width  petal.length  petal.width    variety  \
+132  133         40.50         2.80         10.50         2.20  Virginica   
+
+     outlier  
+132       -1  
+</pre></div>
+</div>
+</div>
+</div>
+<p>-) Data sebelum dan setelah outlier ditampilkan, dengan 5 baris pertama sebagai contoh.
+-) Baris data dengan nilai ‘outlier’ -1 ditampilkan, menunjukkan kolom mana yang merupakan outlier.</p>
+<p>Visualisasi Data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Visualisasi data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s1">&#39;sepal.length&#39;</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="s1">&#39;sepal.width&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">predictions</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sepal Length&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sepal Width&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Visualisasi Outlier dengan LOF&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5bb4645d3895caf4fe6b86673aa5c12c708a99f450e5520c1f338fd6575d2b7d.png" src="../_images/5bb4645d3895caf4fe6b86673aa5c12c708a99f450e5520c1f338fd6575d2b7d.png" />
+</div>
+</div>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=21a3347e-0ad4-4da6-97da-732e20f2b714' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Deepnote"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengumpulkan-data">Mengumpulkan Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menarik-data-dari-mysql">Menarik Data dari MySql</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menarik-data-dari-postgre">Menarik Data dari Postgre</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memahami-data">Memahami Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-jumlah-data-perkelas">Menentukan Jumlah Data Perkelas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengidentifikasi-missing-values">Mengidentifikasi Missing Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbedaan-jenis-kategori-atau-nilai">Perbedaan Jenis Kategori atau Nilai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-k-nn">Metode K-NN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-k-nearest-neighbor">Algoritma K-Nearest Neighbor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-euclidean-distance">Rumus Euclidean Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-algoritma-knn-manual">Implementasi Algoritma KNN Manual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-knn-library-scikit-learn">Implementasi KNN Library Scikit Learn</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-lof-local-outlier-factor">Deteksi LOF (Local Outlier Factor)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teori-lof">Teori LOF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-proses-lof-manual-5-data-3-fitur">Contoh Proses LOF Manual (5 Data &amp; 3 Fitur)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-lof-menggunakan-scikit-learn-dari-data-manual">Implementasi LOF Menggunakan Scikit Learn dari Data Manual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-data-real-ke-outlier-data-iris">Identifikasi Data Real ke Outlier (Data Iris)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
