@@ -2157,24 +2157,24 @@ Data Setelah imputasi untuk baris yang kosong:
 <ul class="simple">
 <li><p>Menentukan Dataset (Data Awal) yang Digunakan</p></li>
 </ul>
-<img src="LOF Manual/Dataset.png" width="50%" align="left" /><p>Pada tahap awal, diketahui ada 5 data yang tersedia, yaitu a, b, c, d, e. Sedangkan, adapula fitur yang tertera, yakni x, y, z. Pada masing-masing kolom berisikan data / angka yang berbeda-beda. Nantinya kita akan mencari outlier dari data yang tersedia di atas.</p>
+<img src="../_images/LOF Manual/Dataset.png" width="50%" align="left" /><p>Pada tahap awal, diketahui ada 5 data yang tersedia, yaitu a, b, c, d, e. Sedangkan, adapula fitur yang tertera, yakni x, y, z. Pada masing-masing kolom berisikan data / angka yang berbeda-beda. Nantinya kita akan mencari outlier dari data yang tersedia di atas.</p>
 <ul class="simple">
 <li><p>Menghitung semua jarak antara setiap n titik data</p></li>
 </ul>
-<img src="LOF Manual/Step 1.png" width="50%" align="left" /><p>Pada langkah pertama, menghitung seluruh jarak antara tiap-tiap titik data. Pada contoh di atas, menggunakan tiap 3 titik data. Pada kolom proses dilakukan pengurangan antar titik yang dicari. Pastikan menggunakan rumus ABS() atau Absolute agar menghindari hasil yang negatif. Hal ini dikarenakan mencari hasil yang keseluruhan positif agar mempermudahkan proses LOF selanjutnya. Setelah itu, akan menghasilkan kolom ‘Hasil’ yang menampung dari penjumlahan tiap-tiap proses penghitungan jarak sebelumnya.</p>
+<img src="../_images/LOF Manual/Step 1.png" width="50%" align="left" /><p>Pada langkah pertama, menghitung seluruh jarak antara tiap-tiap titik data. Pada contoh di atas, menggunakan tiap 3 titik data. Pada kolom proses dilakukan pengurangan antar titik yang dicari. Pastikan menggunakan rumus ABS() atau Absolute agar menghindari hasil yang negatif. Hal ini dikarenakan mencari hasil yang keseluruhan positif agar mempermudahkan proses LOF selanjutnya. Setelah itu, akan menghasilkan kolom ‘Hasil’ yang menampung dari penjumlahan tiap-tiap proses penghitungan jarak sebelumnya.</p>
 <ul class="simple">
 <li><p>Menghitung semua dist₃(o)</p></li>
 </ul>
-<img src="LOF Manual/Step 2.png" width="50%" align="left" /><p>Selanjutnya, menghitung seluruh dist₃(o). distₖ(o) merupakan jarak antara o (object) dan NN ke-k (tetangga terdekat ke-k). Diketahui pada gambar di atas, bahwa dipisahkan tiap-tiap jarak (distance) mulai dari a, b, sampai e. Lalu, diurut masing-masing jarak tersebut mulai dari yang terkecil hingga terbesar. Kemudian, ditarik hasil dalam dist₃(o) -&gt; o = a, b, c, d, e dari k = 3, di antaranya 9, 9, 14, 16, dan 8. Angka-angka itu didapatkan dari urutan ketiga angka setelah diurutkan (kolom Setelah Diurutkan).</p>
+<img src="../_images/LOF Manual/Step 2.png" width="50%" align="left" /><p>Selanjutnya, menghitung seluruh dist₃(o). distₖ(o) merupakan jarak antara o (object) dan NN ke-k (tetangga terdekat ke-k). Diketahui pada gambar di atas, bahwa dipisahkan tiap-tiap jarak (distance) mulai dari a, b, sampai e. Lalu, diurut masing-masing jarak tersebut mulai dari yang terkecil hingga terbesar. Kemudian, ditarik hasil dalam dist₃(o) -&gt; o = a, b, c, d, e dari k = 3, di antaranya 9, 9, 14, 16, dan 8. Angka-angka itu didapatkan dari urutan ketiga angka setelah diurutkan (kolom Setelah Diurutkan).</p>
 <ul class="simple">
 <li><p>Menghitung semua Nₖ(o)</p></li>
 </ul>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                                    lingkungan jarak-k dari o               -&gt;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  lingkungan jarak-k dari o               -&gt;
 </pre></div>
 </div>
 <div class="math notranslate nohighlight">
 \[ \text{N}{_k}(o) = \left\{ \text{o' | o' in D}, \text{dist}(o, o') \leq \text{dist}{_k} (o) \right\} \]</div>
-<img src="LOF Manual/Step 3.png" width="" align="left" /><p>Setelah itu, menghitung seluruh lingkungan jarak-k dari o / object. Dapat dilihat pada gambar di atas, misalnya hasil dari N₃(a) diperoleh b, c, d, dan e. Hal ini dapat terjadi karena keempat titik tersebut hasil manhattan (Step 1) itu termasuk kurang dari sama dengan (≤) dari object a. Berlaku juga untuk N₃(b) - N₃(e) karena rumusnya sama (rumus Latex di atas).</p>
+<img src="../_images/LOF Manual/Step 3.png" width="" align="left" /><p>Setelah itu, menghitung seluruh lingkungan jarak-k dari o / object. Dapat dilihat pada gambar di atas, misalnya hasil dari N₃(a) diperoleh b, c, d, dan e. Hal ini dapat terjadi karena keempat titik tersebut hasil manhattan (Step 1) itu termasuk kurang dari sama dengan (≤) dari object a. Berlaku juga untuk N₃(b) - N₃(e) karena rumusnya sama (rumus Latex di atas).</p>
 <ul class="simple">
 <li><p>Menghitung semua lrdₖ(o)</p></li>
 </ul>
@@ -2186,7 +2186,7 @@ Data Setelah imputasi untuk baris yang kosong:
 <p>|| Nₖ(o) || berarti jumlah objek dalam Nₖ(o)</p>
 <div class="math notranslate nohighlight">
 \[ \text{reachdist}{_k}(o' \leftarrow o) = \max\left\{ \text{dist}{_k}(o), \text{dist}(o, o') \right\} \]</div>
-<img src="LOF Manual/Step 4.png" width="" align="left" /><p>Selanjutnya, menghitung semua kepadatan keterjangkauan lokal lrdₖ(o). Dilihat gambar serta rumus di atas, misalnya pada lrd₃(a) menghasilkan nilai sebesar 0.266667. Hal ini terjadi karena rumus lrdₖ(o) di atas, bahwa 4 (jumlah kepadatan keterjangkauan lokal) dibagi dengan penjumlahan 1, 5, 9 (Step 2 -&gt; kolom Setelah Diurutkan). Dimana 1, 5, 9 diperoleh dari reachdist (jangkauan jarak) k = 3 dari selain object a (b, c, d, e). Demikian pula, untuk cara mencari lrd₃(b) - lrd₃(e) yang mana akan menghasilkan nilai akhir sesuai tabel di atas.</p>
+<img src="../_images/LOF Manual/Step 4.png" width="" align="left" /><p>Selanjutnya, menghitung semua kepadatan keterjangkauan lokal lrdₖ(o). Dilihat gambar serta rumus di atas, misalnya pada lrd₃(a) menghasilkan nilai sebesar 0.266667. Hal ini terjadi karena rumus lrdₖ(o) di atas, bahwa 4 (jumlah kepadatan keterjangkauan lokal) dibagi dengan penjumlahan 1, 5, 9 (Step 2 -&gt; kolom Setelah Diurutkan). Dimana 1, 5, 9 diperoleh dari reachdist (jangkauan jarak) k = 3 dari selain object a (b, c, d, e). Demikian pula, untuk cara mencari lrd₃(b) - lrd₃(e) yang mana akan menghasilkan nilai akhir sesuai tabel di atas.</p>
 <ul class="simple">
 <li><p>Menghitung semua LOFₖ(o)</p></li>
 </ul>
@@ -2194,11 +2194,11 @@ Data Setelah imputasi untuk baris yang kosong:
 \[
 \text{LOF}_k(o) = \frac{\sum_{o' \in N_k(o)} \frac{lrd_k(o')}{lrd_k(o)}}{||N_k(o)||} = {\sum_{o' \in N_k(o)}}{lrd_k(o')} . {\sum_{o' \in N_k(o)}} \text{reachdist}{_k}(o' \leftarrow o)
 \]</div>
-<img src="LOF Manual/Step 5.png" width="" align="left" /><p>Kemudian, pada tahap selanjutnya menghitung semua  Local Outlier Factor-k (LOFₖ) pada tiap object. Pada gambar di atas, misalnya diketahui LOF₃(a) -&gt; sesuai rumus di atas. Hal itu akan menghasilkan nilai sebesar 10.57703. Dimana asalnya dari penjumlahan seluruh hasil kecuali lrd₃(a), yaitu lrd₃(b) - lrd₃(e) dikalikan dengan penjumlahan reachdist (jangkauan jarak) k = 3 dari selain object a (b, c, d, e). Demikian pula untuk mencari hasil LOF₃(b) - LOF₃(e) dengan acuan rumus di atas. Akhirnya, akan menghasilkan nilai-nilai yang tertera pada kolom ‘Hasil’.</p>
+<img src="../_images/LOF Manual/Step 5.png" width="" align="left" /><p>Kemudian, pada tahap selanjutnya menghitung semua  Local Outlier Factor-k (LOFₖ) pada tiap object. Pada gambar di atas, misalnya diketahui LOF₃(a) -&gt; sesuai rumus di atas. Hal itu akan menghasilkan nilai sebesar 10.57703. Dimana asalnya dari penjumlahan seluruh hasil kecuali lrd₃(a), yaitu lrd₃(b) - lrd₃(e) dikalikan dengan penjumlahan reachdist (jangkauan jarak) k = 3 dari selain object a (b, c, d, e). Demikian pula untuk mencari hasil LOF₃(b) - LOF₃(e) dengan acuan rumus di atas. Akhirnya, akan menghasilkan nilai-nilai yang tertera pada kolom ‘Hasil’.</p>
 <ul class="simple">
 <li><p>Mengurutkan semua LOFₖ(o)</p></li>
 </ul>
-<img src="LOF Manual/Step 6.png" width="" align="left" /><p>Terakhir, mengurutkan hasil dari proses LOFₖ(o) sebelumnya (Step 5). Urutannya dimulai dari yang terbesar ke terkecil dan akan menghasilkan sesuai gambar di atas. Dapat disimpulkan, bahwa LOF₃(d) mendapatkan nilai yang tertinggi sebesar 39.73109 serta dapat dipastikan untuk LOF₃(d) merupakan outliner dari dataset yang diketahui di awal.</p>
+<img src="../_images/LOF Manual/Step 6.png" width="" align="left" /><p>Terakhir, mengurutkan hasil dari proses LOFₖ(o) sebelumnya (Step 5). Urutannya dimulai dari yang terbesar ke terkecil dan akan menghasilkan sesuai gambar di atas. Dapat disimpulkan, bahwa LOF₃(d) mendapatkan nilai yang tertinggi sebesar 39.73109 serta dapat dipastikan untuk LOF₃(d) merupakan outliner dari dataset yang diketahui di awal.</p>
 </section>
 <section id="implementasi-lof-menggunakan-scikit-learn-dari-data-manual">
 <h3>Implementasi LOF Menggunakan Scikit Learn dari Data Manual<a class="headerlink" href="#implementasi-lof-menggunakan-scikit-learn-dari-data-manual" title="Link to this heading">#</a></h3>
